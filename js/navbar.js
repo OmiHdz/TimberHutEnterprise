@@ -14,13 +14,13 @@ function menus(){
 		nav.className = ("nav1");	
 		nav.style.transition = ".8s";
 		menu.style.top = "60px";
-		open.style.color = "white" ;
+		open.style.color = "white";
 	}else{
 		nav.classList.remove("nav1");
 		nav.className = ("nav2");
 		nav.style.transition = ".8s";
 		menu.style.top = "70px";
-		open.style.color = "black" ;
+		open.style.color = "black";
 	}
 }
 

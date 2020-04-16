@@ -23,7 +23,7 @@ function displayPublication(dataPublication){
 	var divContent=document.getElementById("content-publication");
 	
 		
-
+		let divSpace=document.createElement("div");
 		let sectionPublication=document.createElement("section");
 		let divPubCol=document.createElement("div");
 		let divPubNull1=document.createElement("div");
@@ -43,16 +43,19 @@ function displayPublication(dataPublication){
 		
 		let divPubNull2=document.createElement("div");
 
+		let link =document.getElementById("publication_img");
 		h2.innerText=publication.name;
 		img.src=publication.photo;
 		a.innerText=publication.link;
-		p.innerText=publication.description;
+		a.setAttribute('href',publication.link);
+		p.innerText=publication.text;
 
-
+		divSpace.classList.add("p-4");
 		sectionPublication.classList.add("publication-event");
 		divPubCol.classList.add("d-flex");
 		divPubCol.classList.add("justify-content-center");
 		divPubCont.classList.add("p-5");
+		divPubCont.id="publication__content";
 		img.id="publication__img";
 		h2.classList.add("publication__h2--title");
 		divPubDesc.classList.add("publication__description");
@@ -65,6 +68,7 @@ function displayPublication(dataPublication){
 		divMapContainerChild.id="publication__map";
 		divMap.id="googleMap";
 
+		sectionPublication.appendChild(divSpace);
 		divPubDescTag.appendChild(a);
 		divPubDesc.appendChild(divPubDescTag);
 		divPubDesc.appendChild(p);

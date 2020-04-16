@@ -23,11 +23,21 @@ function displayEvent(dataEvent){
 		
 		let sectionEvent=document.createElement("section");
 		let divPubCol=document.createElement("div");
+		let divPubColNull1=document.createElement("div");
 		let divPubCont=document.createElement("div");
+		let divPubColNull2=document.createElement("div");
 		let h2=document.createElement("h2");
-		let img=document.createElement("img");
+
+
+		
 		let divPubDesc= document.createElement("div");
 		let divPubDescTag= document.createElement("div");
+
+		let divMedia=document.createElement("div");
+		let divMediaContainer=document.createElement("div");
+		let img=document.createElement("img");
+		let divMediaBody=document.createElement("div");
+		let h5=document.createElement("div");
 		let a=document.createElement("a");
 		let p=document.createElement("p");
 		let button=document.createElement("button");
@@ -40,6 +50,7 @@ function displayEvent(dataEvent){
 		a.innerText=event.link;
 		p.innerText=event.description;
 		button.innerText="Ir a Evento";
+
 		button.onclick=function(){
 			localStorage.setItem('idEvent', event.id);
 			window.location.href="./event.html";
@@ -47,28 +58,46 @@ function displayEvent(dataEvent){
 
 
 		sectionEvent.classList.add("publication-event");
+		divPubColNull1.classList.add("p");
 		divPubCol.classList.add("d-flex");
 		divPubCol.classList.add("justify-content-center");
+		divPubColNull2.classList.add("p");
 		divPubCont.classList.add("p-5");
-		img.id="publication__img";
+		
+		img.id="displayEvent__img";
 		h2.classList.add("publication__h2--title");
 		divPubDesc.classList.add("publication__description");
 		divPubDesc.id="publication__description";
 		divPubDescTag.classList.add("publication__description--tag");
+		divMedia.classList.add("media");
+		divMediaBody.classList.add("media-body");
+		h5.classList.add("mt-0");
 		button.classList.add("btn");
 		button.classList.add("btn-primary");
 
 
-		divPubDescTag.appendChild(a);
+	
+
 		divPubDesc.appendChild(divPubDescTag);
-		divPubDesc.appendChild(p);
+		
 		divPubCont.appendChild(h2);
-		divPubCont.appendChild(img);
+		
 		divPubCont.appendChild(divPubDesc);
 		divPubCol.appendChild(divPubCont);
+
 		sectionEvent.appendChild(divPubCol);
 		divContent.appendChild(sectionEvent);
+		
+		divPubCont.appendChild(divMedia);
+		divMedia.appendChild(divMediaContainer);
+		divMedia.appendChild(divMediaBody);
+		divMediaContainer.appendChild(img);
+		divMediaBody.appendChild(h5);
+		divMediaBody.appendChild(p);
+		divMediaBody.appendChild(a);
 		divPubCont.appendChild(button);
+
+		
 		
 
 		

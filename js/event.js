@@ -1,5 +1,5 @@
-//var idEvent =  localStorage.getItem('idEvent');
-var idEvent = 3;
+var idEvent =  localStorage.getItem('idEvent');
+
 var divMap=document.createElement("div");
 
 function getEvents(){
@@ -21,7 +21,7 @@ function displayEvent(dataEvent){
 
 	var divContent=document.getElementById("content-event");
 	
-		
+		let divSpace=document.createElement("div");
 		let sectionEvent=document.createElement("section");
 		let divPubCol=document.createElement("div");
 		let divPubCont=document.createElement("div");
@@ -43,13 +43,15 @@ function displayEvent(dataEvent){
 		h2.innerText=event.name;
 		img.src=event.photo;
 		a.innerText=event.link;
+		a.setAttribute('href',event.link);
 		p.innerText=event.description;
 
-
+		divSpace.classList.add("p-4");
 		sectionEvent.classList.add("publication-event");
 		divPubCol.classList.add("d-flex");
 		divPubCol.classList.add("justify-content-center");
 		divPubCont.classList.add("p-5");
+		divPubCont.id="publication__content";
 		img.id="publication__img";
 		h2.classList.add("publication__h2--title");
 		divPubDesc.classList.add("publication__description");
@@ -62,7 +64,7 @@ function displayEvent(dataEvent){
 		divMapContainerChild.id="publication__map";
 		divMap.id="googleMap";
 
-
+		sectionEvent.appendChild(divSpace);
 		divPubDescTag.appendChild(a);
 		divPubDesc.appendChild(divPubDescTag);
 		divPubDesc.appendChild(p);
