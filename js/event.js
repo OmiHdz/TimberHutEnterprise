@@ -1,4 +1,5 @@
 var idEvent =  localStorage.getItem('idEvent');
+idEvent=7;
 var divMap=document.createElement("div");
 
 function getEvents(){
