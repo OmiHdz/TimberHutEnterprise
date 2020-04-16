@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dSYyOwq2-_0wwja7ZoZkx4vcSdAqF-0&callback=initMap" defer></script>
+
+    <!-- Calendario-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <title>PostEvent</title>
+  </head>
+  <body style="background: var(--color1);">
+
+  	<header class="head-dash">   
+		<nav id="nav" class="nav2">
+			<div class="contenedor-nav">
+
+				<div class="logo-dash">
+					<img class="logo1" src="img/cabañaCopia.jpg">
+				</div>
+
+				<div class="titulo text-dash">
+					<h1>Timberhut</h1>			
+				</div>
+
+				<div class="enlaces" id="enlaces">
+					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
+					<a href="sports.html" id="enlace-descubre" class="btn-header">Sports</a>
+					
+					<div class="drop">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="profile.html">Perfil</a>
+        					<a class="dropdown-item" href="publication.html">Publicación</a>
+        				</div>
+					</div>
+					<div class="drop">
+						<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="event.html">Evento</a>
+        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
+        				</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="text-dash">
+			<p>Aqui podra enterarte de </p>
+			<p>nuevas noticias y deportes</p>
+		</div>
+	</header>
+
+	<section class="publication" id="content-event">
+		<div class="postEvent__title">
+				<h2 class="postEvent__h2--title">Publicar Evento</h2>
+				<h3>Ingresa los datos para públicar un evento nuevo</h3>	
+			</div>		
+
+		<div class="d-flex justify-content-center" id="publication_columns">
+			
+			<div class="p-5" id="publication__content">
+				<div class="publication__description" id="publication__description">
+					<div class="publication__description--tag">
+						<input id="tituloEvent" type="text" placeholder="Ingresa el titulo del evento" />
+						<br>
+						<select name="idSport" id="idSport">
+							<option selected disabled>Selecciona el deporte</option>
+							<option value="1">Senderismo</option>
+							<option value="2">Kayaking</option>
+							<option value="3">Trail Running</option>
+							<option value="4">Caminata</option>
+							<option value="5">Tiro con arco</option>
+							<option value="6">Ciclismo de montaña</option>
+							<option value="7">Salto base</option>
+							<option value="8">Cañonismo</option>
+							<option value="9">Senderismo</option>
+						</select>	
+					</div>
+					<textarea id="descriptionEvent" rows="5" cols="40"placeholder="Ingresa la información de tu evento"></textarea>
+					<input id="linkEvent" type="text" placeholder="Ingresa un link de tu evento(optional)" />
+
+				</div>
+				<div  >
+					<div class="custom-file" >
+						<input type="file" class="custom-file-input" id="img_profile" name="img"accept="image/png, image/jpeg">
+						<label class="custom-file-label" for="img_profile">Sube una foto tuya</label>
+					</div>
+				</div>
+
+				<!--calendario-->
+				<div>
+					<input id="dateTime" width="234" />
+				    <script>
+				        $('#dateTime').datetimepicker({
+				            uiLibrary: 'bootstrap4',
+				            footer: true
+				        });
+				    </script>
+				</div>	
+			
+		</div>	
+		</div>
+		<div class="text-center" >
+	        <h4>Instrucciones</h4>
+	    </div>
+        <div class="text-center">
+		    <p>Para agregar un nuevo punto haga doble clic en el mapa.</p>
+		    <p>Si desea recolocar un marcador, simplemente arrástrelo hasta la posición deseada.</p>
+		    <p>Al hacer clic en un marcador se mostrará la información de este y la opción para eliminarlo.</p>
+		    <p>Cuando haya terminado de describir la ruta, oprima el botón de enviar, deberá haber creado por lo menos un punto para poder hacerlo.</p>
+		</div>
+		<div class="d-flex justify-content-center" >
+			<button id="submitRoute" disabled data-toggle="modal">Subir evento</button>
+            <button disabled id="btn-borrar-marcador">Borrar marcador</button>
+		</div>
+		<div class="d-flex p-5 ">		
+			<div class="d-flex justify-content-between" id="publication__map">
+			<div></div>	
+			<div  id="googleMap"></div>
+			<div></div>
+		</div>
+		</div>
+	</section>
+	<!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Felicidades</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body" id="show-publication">
+	        Tu publicacion se creo con exito
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" id="btn-ok">Ok</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+ 	<footer id="contacto">
+        <div id="contacto" class="footer">
+			<div class="logo-f">
+				<img src="img/cabañaCopia.jpg">				
+			</div>	
+			<p>Pasión por la naturaleza</p>		
+		</div>
+	</footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/postEvent.js"></script>
+
+  </body>
+</html>
