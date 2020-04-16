@@ -68,7 +68,7 @@ function displayEvent(dataEvent){
 		divPubCol.appendChild(divPubCont);
 		sectionEvent.appendChild(divPubCol);
 		divContent.appendChild(sectionEvent);
-		divContent.appendChild(button);
+		divPubCont.appendChild(button);
 		
 
 		
