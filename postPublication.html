@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
 
 
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,8 +19,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 
-    
-    <script src="js/mapFunctions.js" defer></script>
+<<<<<<< HEAD
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dSYyOwq2-_0wwja7ZoZkx4vcSdAqF-0&callback=initMap" defer></script>
 
     <!-- Calendario-->
@@ -74,10 +80,13 @@
 		<div class="d-flex justify-content-center" id="publication_columns">
 			
 			<div class="p-5" id="publication__content">
+<<<<<<<< HEAD:postPublication.html
 			
 				
 				
 				<img src="https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg?cs=srgb&dl=antiguo-aventura-brujula-descubrimiento-697662.jpg&fm=jpg0" id="publication__img">
+========
+>>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d:postEvent.html
 				<div class="publication__description" id="publication__description">
 
 					<div class="input-group">
@@ -87,6 +96,7 @@
 						  
 					</div>
 					<div class="publication__description--tag">
+<<<<<<<< HEAD:postPublication.html
 
 						<div class="custom-file">
 						    <input type="file" class="custom-file-input" id="img_profile" name="img"accept="image/png, image/jpeg">
@@ -100,6 +110,32 @@
 					    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 					  </div>
 					
+========
+						<input id="tituloEvent" type="text" placeholder="Ingresa el titulo del evento" />
+						<br>
+						<select name="idSport" id="idSport">
+							<option selected disabled>Selecciona el deporte</option>
+							<option value="1">Senderismo</option>
+							<option value="2">Kayaking</option>
+							<option value="3">Trail Running</option>
+							<option value="4">Caminata</option>
+							<option value="5">Tiro con arco</option>
+							<option value="6">Ciclismo de montaña</option>
+							<option value="7">Salto base</option>
+							<option value="8">Cañonismo</option>
+							<option value="9">Senderismo</option>
+						</select>	
+					</div>
+					<textarea id="descriptionEvent" rows="5" cols="40"placeholder="Ingresa la información de tu evento"></textarea>
+					<input id="linkEvent" type="text" placeholder="Ingresa un link de tu evento(optional)" />
+
+				</div>
+				<div  >
+					<div class="custom-file" >
+						<input type="file" class="custom-file-input" id="img_profile" name="img"accept="image/png, image/jpeg">
+						<label class="custom-file-label" for="img_profile">Sube una foto tuya</label>
+					</div>
+>>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d:postEvent.html
 				</div>
 
 				<!--calendario-->
@@ -111,48 +147,217 @@
 				            footer: true
 				        });
 				    </script>
+				</div>	
+			
+		</div>	
+		</div>
+		<div class="text-center" >
+	        <h4>Instrucciones</h4>
+	    </div>
+        <div class="text-center">
+		    <p>Para agregar un nuevo punto haga doble clic en el mapa.</p>
+		    <p>Si desea recolocar un marcador, simplemente arrástrelo hasta la posición deseada.</p>
+		    <p>Al hacer clic en un marcador se mostrará la información de este y la opción para eliminarlo.</p>
+		    <p>Cuando haya terminado de describir la ruta, oprima el botón de enviar, deberá haber creado por lo menos un punto para poder hacerlo.</p>
+		</div>
+		<div class="d-flex justify-content-center" >
+			<button id="submitRoute" disabled data-toggle="modal">Subir evento</button>
+            <button disabled id="btn-borrar-marcador">Borrar marcador</button>
+		</div>
+		<div class="d-flex p-5 ">		
+			<div class="d-flex justify-content-between" id="publication__map">
+			<div></div>	
+			<div  id="googleMap"></div>
+			<div></div>
+		</div>
+		</div>
+	</section>
+	<!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Felicidades</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body" id="show-publication">
+	        Tu publicacion se creo con exito
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" id="btn-ok">Ok</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+ 	<footer id="contacto">
+=======
+    
+    <script src="js/mapFunctions.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dSYyOwq2-_0wwja7ZoZkx4vcSdAqF-0&callback=initMap" defer></script>
+    <title>Publicacion</title>
+</head>
+<body>
+    
+  <header class="head__publication">
+		<nav id="nav" class="nav2">
+			<div class="contenedor-nav">
+				<div class="logo-dash">
+					<img src="img/cabañaCopia.jpg">
+				</div>
+				<div class="titulo">
+					<h1>Timberhut</h1>			
+				</div>
+				<div class="enlaces" id="enlaces">
+					<a href="#" id="enlace-home" class="btn-header">Home</a>
+					<a href="#" id="enlace-deportes" class="btn-header">Deportes</a>
+					<a href="#" id="enlace-descubre" class="btn-header">Descubre</a>
+
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="#">Perfil</a>
+        					<a class="dropdown-item" href="#">Eventos</a>
+        				</div>
+
+				</div>
+				<div class="icono" id="open">
+					<span>&#9776;</span>
 				</div>
 
 			</div>
+		</nav>
+		
+	</header>
+
+	<section class="publication">
+		<div  id="publication_columns">
+			<div class="p"></div>
+			<div class="p-5" id="publication__content">
+
+				<div class="p-3">
+				
+				<h2 class="publication__h2--title" id="register2__title">Tus publicaciones</h2><br><br>
+					<div class="post-pub">
+						<div class=" post img-content" id="imgPublication">
+							<img class="content-post" src="https://www.we12travel.com/blog/wp-content/uploads/2019/07/wandelen-in-het-zwarte-woud.jpg"  >
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="publication__description" id="publication__description">
+				
+					<div class="postPubli" >
+						<div class="input-groupP">
+						  
+						  <div class="custom-file" >
+						    <input type="file" class="custom-file-input" id="inputGroupFile01"
+						      aria-describedby="inputGroupFileAddon01">
+						    <label class="custom-file-label" for="inputGroupFile01">Sube tu foto</label>
+						  </div>						  
+						</div> <br>	<br>
+
+						<div class="input-description">
+							<p>Descripcion:</p> 
+							<input type="text" class="description1" name="inp-description" placeholder="Cuentanos sobre ti"  style="width:600px; height:200px">
+						</div><br>
+						<div class="input-group-prepend ">
+							<input  type="submit" value="cargar" class="input-group-text" id="inputGroupFileAddon01">
+						</div>
+					</div> <br><br>
+					<div class="check-text">
+						<h2>Selecciona tu tag</h2>
+					</div>
+					<div class="p-5" id="check">
+						
+						<div class="mitad">	
+							<div class="checkbox">
+						  		<label><input type="checkbox" value="">Senderismo</label>
+							</div>
+							<div class="checkbox">
+						 	 	<label><input type="checkbox" value="">Kayaking</label>
+							</div>
+							<div class="checkbox">
+							  <label><input type="checkbox" value="">Trail Running</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" value="">Caminata</label>
+							</div>
+							<div class="checkbox">
+							 	<label><input type="checkbox" value="">Tiro con arco</label>
+							</div>
+						</div>
+
+						<div class="mitad">
+							<div class="checkbox">
+						  		<label><input type="checkbox" value="">Ciclismo de montaña</label>
+							</div>
+							<div class="checkbox">
+						  		<label><input type="checkbox" value="">Salto Base</label>
+							</div>						
+							<div class="checkbox">
+						  		<label><input type="checkbox" value="">Cañonismo</label>
+							</div>
+							<div class="checkbox">
+						  		<label><input type="checkbox" value="">Senderismo</label>
+							</div>
+						</div>
+
+					</div>
+
+					<form>
+					  <button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+
+					
+
+
+
+				</div>
 				
 
-			
 
-			 
 			</div>
-
-		
-		<div class="d-flex p-5 ">
-						
-			<div class="d-flex justify-content-between" id="publication__map">
-			<div></div>	
-			<div  id="googleMap" style="width: 80%; height: 400px;"></div>
-			<div></div>
+			<div class="p">
+				
 			</div>
-			
-		</div>	
-
-		
-		
-
-
+		</div>
 	</section>
- 	<footer id="contacto">
+
+	<footer id="contacto">
+>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
         <div id="contacto" class="footer">
 			<div class="logo-f">
 				<img src="img/cabañaCopia.jpg">				
 			</div>	
+<<<<<<< HEAD
 			<p>Pasión por la naturaleza</p>		
+=======
+			<p>Pasion por la naturaleza</p>		
+>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
 		</div>
 	</footer>
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 	<script src="js/navbar.js"></script>
+	<script src="js/postEvent.js"></script>
 
   </body>
+=======
+</body>
+>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
 </html>

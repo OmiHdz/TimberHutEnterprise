@@ -1,5 +1,9 @@
 var idEvent =  localStorage.getItem('idEvent');
+<<<<<<< HEAD
 
+=======
+idEvent=7;
+>>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
 var divMap=document.createElement("div");
 
 function getEvents(){
