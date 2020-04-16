@@ -1,7 +1,7 @@
 var idUser = localStorage.getItem('id');
 let img = document.getElementById("publication__img");
 var formSport = document.getElementById("form");
-	
+var nameUser = document.getElementById("exampleModalLabel");
 formSport.onsubmit = sendUserSport;
 
 function sendDataUser(){
@@ -19,20 +19,19 @@ function sendDataUser(){
 
 	fetch("http://localhost:8080/v1/users/" + idUser, requestOptions)
 	  .then(response => response.text())
-	  .then(result => mostrarImg(JSON.parse(result).profilePic))	
+	  .then(result => saveData(JSON.parse(result)))	
 	  .catch(error => console.log('error', error));
 }
 
-function mostrarImg(imgSource){
-	img.src = imgSource;
-	
+function saveData(dataUser){
+	img.src = dataUser.profilePic;
+	nameUser = dataUser.userName;
 }
 
 function sendDataUserSport(idSport){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 201){
-			window.location.href="./dashboard.html";
 		}
 	}
 	request.open("POST","http://localhost:8080/v1/userSport" ,true);
@@ -52,4 +51,17 @@ function sendUserSport(e){
 			sendDataUserSport(formSport.sport[i].value);
 		}
 	}
+	showDialog();
+}
+
+function showDialog(){
+	let modalText = document.getElementById("exampleModalLabel");
+	let btnOk = document.getElementById("btn-ok");
+	
+	btnOk.onclick = function(){
+		window.location.href="./dashboard.html";;
+	}
+
+	modalText.innerText = "Bienvenido " + nameUser;
+	$("#modal").modal();
 }
