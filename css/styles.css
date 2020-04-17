@@ -195,13 +195,21 @@ ion-icon{
 	background-size: cover;
  }
 /* aquí van los estilos especificos del publication/event Register */
+
+#mediaCalendar{
+	    align-items: center;
+    display: flex;
+}
 .media{
 	display: flex;
 	flex-direction: column;
+	box-shadow: var(--shadow);
 }
 .media-body{	
 	padding:15px;
 	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 	
 .publication{
@@ -287,6 +295,13 @@ display: flex;
 #googleMap{
 	width: 80%;
 	height: 400px
+}
+
+#btnPrimary{
+	
+	align-self: center;
+	margin-bottom: 10px;
+
 }
 
 
@@ -735,7 +750,7 @@ div #check{
 .publication__description .media{
 	width: 75%;
 	box-shadow: var(--shadow);
-	height: 500px;
+	height: 300px;
 	overflow: hidden;
 	margin-bottom: var(--espacio-img);
 	flex-direction: row;
