@@ -9,8 +9,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-	<!--Tipo deLetra</!-->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600&display=swap" rel="stylesheet">
+	<!--Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@472&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Sorts+Mill+Goudy:ital@1&display=swap" rel="stylesheet">
+
+
 
 	<title>Profile</title>
 </head>
@@ -32,21 +40,14 @@
 					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
 					<a href="sports.html" id="enlace-descubre" class="btn-header">Sports</a>
 
+					<a href="event.html" id="enlace-descubre" class="btn-header">Eventos</a>		
 					<div class="drop">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
         					<a class="dropdown-item" href="profile.html">Perfil</a>
-        					<a class="dropdown-item" href="publication.html">Publicación</a>
+        					
         				</div>
 					</div>
-					<div class="drop">
-						<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="event.html">Evento</a>
-        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
-        				</div>
-					</div>
-
 					<div class="icono" id="open">
 						<span>&#9776;</span>
 					</div>
@@ -59,7 +60,7 @@
 
 		<div class="profile">
 			<div class="arriba">
-				<h4>Informacion</h4>
+				<h4 class="publication__h2--title">Informacion</h4>
 				
 				<div class="content-profile">
 					<div class="img-content">
@@ -71,19 +72,19 @@
 					<table class="datos-prof">
 						<tr>
 							<th style="text-align:left">User name: </th>
-							<td style="text-align:left">JSP</td>		
+							<td class="contenido-letra" style="text-align:left">JSP</td>		
 						</tr>
 						<tr>
 							<th style="text-align:left">Name: </th>
-							<td style="text-align:left">Juan</td>		
+							<td class="contenido-letra" style="text-align:left">Juan</td>		
 						</tr>
 						<tr>
-							<th style="text-align:left">Last name: </th>
-							<td style="text-align:left">Sanchez</td>		
+							<th  style="text-align:left">Last name: </th>
+							<td class="contenido-letra" style="text-align:left">Sanchez</td>		
 						</tr>
 						<tr>
-							<th style="text-align:left">Email: </th>
-							<td style="text-align:left">jsp123@gmail.com</td>	
+							<th  style="text-align:left">Email: </th>
+							<td class="contenido-letra" style="text-align:left">jsp123@gmail.com</td>	
 						</tr>										
 					</table>
 				</div>
@@ -91,8 +92,8 @@
 
 			<div class="description">
 				<div class="text-profile">
-					<h4 style="text-align:left">User</h4>
-					<p class="desc" style="text-align:left">Description</p>
+					<h4 style="text-align:left" class="publication__h2--title">User</h4>
+					<p class="desc parrafos" style="text-align:left">Description</p>
 					<div class="texto-descripcion"></div>
 				</div>
 			</div>			

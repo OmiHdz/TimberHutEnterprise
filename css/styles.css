@@ -691,6 +691,10 @@ th, td{
 	font-family: var(--letter-content3);
 
 }
+.letra-link{
+	font-family: var(--letter-link);
+	font-size: 22px;
+}
 .input-groupP .custom-file{
 	width: 35%;
 	margin-left:33%;
@@ -743,10 +747,9 @@ div #check{
 	display: flex;
 	flex-wrap: wrap;
    justify-content: center;
-   align-items: center;
-
-	
+   align-items: center;	
 }
+
 .publication__description .media{
 	width: 75%;
 	box-shadow: var(--shadow);

@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dSYyOwq2-_0wwja7ZoZkx4vcSdAqF-0&callback=initMap" defer> </script>
-
+	<!--Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@472&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Sorts+Mill+Goudy:ital@1&display=swap" rel="stylesheet">
     <!-- Calendario-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -35,18 +42,12 @@
 					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
 					<a href="sports.html" id="enlace-descubre" class="btn-header">Sports</a>
 					
+					<a href="event.html" id="enlace-descubre" class="btn-header">Eventos</a>		
 					<div class="drop">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
         					<a class="dropdown-item" href="profile.html">Perfil</a>
-        					<a class="dropdown-item" href="publication.html">Publicación</a>
-        				</div>
-					</div>
-					<div class="drop">
-						<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="event.html">Evento</a>
-        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
+        					
         				</div>
 					</div>
 				</div>
@@ -54,16 +55,16 @@
 		</nav>
 
 		<div class="text-dash">
-			<p>Comparte tu aventura</p>
-			<p></p>
+			<p class="text-portada">Comparte tu aventura</p>
+			<p class="text-portada"></p>
 		</div>
 	</header>
 
 	<section class="publication" id="content-event">
-		<div class="postEvent__title">
-				<h2 class="postEvent__h2--title">Realizar Publicación</h2>
-				<h3>Ingresa los datos para realizar una nueva publicación</h3>	
-			</div>		
+		<div class="postEvent__title"><br>
+				<h2 class="postEvent__h2--title publication__h2--title">Realizar Publicación</h2><br>
+				<h3 class="parrafos">Ingresa los datos para realizar una nueva publicación</h3>	
+			</div><br>
 
 		<div class="d-flex justify-content-center" id="publication_columns">		
 			<div class="p-5" id="publication__content">				
@@ -95,15 +96,15 @@
 				</div>	
 		</div>	
 		</div>
-		<div class="text-center" >
-	        <h4>Instrucciones</h4>
+		<div class="text-center" ><br>
+	        <h3 class="publication__h2--title">Instrucciones</h3>
 	    </div>
         <div class="text-center">
-		    <p>Para agregar un nuevo punto haga doble clic en el mapa.</p>
-		    <p>Si desea recolocar un marcador, simplemente arrástrelo hasta la posición deseada.</p>
-		    <p>Al hacer clic en un marcador se mostrará la información de este y la opción para eliminarlo.</p>
-		    <p>Cuando haya terminado de describir la ruta, oprima el botón de enviar, deberá haber creado por lo menos un punto para poder hacerlo.</p>
-		</div>
+		    <p class="parrafos">Para agregar un nuevo punto haga doble clic en el mapa.</p>
+		    <p class="parrafos">Si desea recolocar un marcador, simplemente arrástrelo hasta la posición deseada.</p>
+		    <p class="parrafos">Al hacer clic en un marcador se mostrará la información de este y la opción para eliminarlo.</p>
+		    <p class="parrafos">Cuando haya terminado de describir la ruta, oprima el botón de enviar, deberá haber creado por lo menos un punto para poder hacerlo.</p>
+		</div><br>
 		<div class="d-flex justify-content-center" >
 			<button id="submitRoute" disabled data-toggle="modal">Subir publicación</button>
             <button disabled id="btn-borrar-marcador">Borrar marcador</button>
