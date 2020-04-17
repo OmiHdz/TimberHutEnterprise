@@ -3,8 +3,7 @@ function getEvents(){
 	var requestEvent = new XMLHttpRequest(); //creando objeto 
 	requestEvent.onreadystatechange = function(){
 		if (this.readyState ==4 && this.status ==200) {
-			var responseEvent = this.responseText;
-			//console.log(JSON.parse(responseEvent));
+			var responseEvent = this.responseText;s
 			displayEvent(JSON.parse(responseEvent));
 		}
 	}
@@ -51,8 +50,9 @@ function displayEvent(dataEvent){
 		p.innerText=event.description;
 		button.innerText="Ir a Evento";
 
+		let idEvent = event.id;
 		button.onclick=function(){
-			localStorage.setItem('idEvent', event.id);
+			localStorage.setItem('idEvent', idEvent);
 			window.location.href="./event.html";
 		}
 

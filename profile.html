@@ -60,11 +60,12 @@
 
 		<div class="profile">
 			<div class="arriba">
-				<h4 class="publication__h2--title">Informacion</h4>
+				
 				
 				<div class="content-profile">
+					<h4 class="publication__h2--title">Informacion</h4>
 					<div class="img-content">
-						<img src="https://img.icons8.com/cotton/2x/gender-neutral-user--v2.png">
+						<img id="img_profile"/>
 					</div>	
 				</div>
 
@@ -72,19 +73,19 @@
 					<table class="datos-prof">
 						<tr>
 							<th style="text-align:left">User name: </th>
-							<td class="contenido-letra" style="text-align:left">JSP</td>		
+							<td class="contenido-letra" style="text-align:left" id="userName"></td>		
 						</tr>
 						<tr>
 							<th style="text-align:left">Name: </th>
-							<td class="contenido-letra" style="text-align:left">Juan</td>		
+							<td class="contenido-letra" style="text-align:left" id="nameU"></td>		
 						</tr>
 						<tr>
 							<th  style="text-align:left">Last name: </th>
-							<td class="contenido-letra" style="text-align:left">Sanchez</td>		
+							<td class="contenido-letra" style="text-align:left" id="lastName"></td>		
 						</tr>
 						<tr>
 							<th  style="text-align:left">Email: </th>
-							<td class="contenido-letra" style="text-align:left">jsp123@gmail.com</td>	
+							<td class="contenido-letra" style="text-align:left" id="email"></td>	
 						</tr>										
 					</table>
 				</div>
@@ -92,7 +93,6 @@
 
 			<div class="description">
 				<div class="text-profile">
-					<h4 style="text-align:left" class="publication__h2--title">User</h4>
 					<p class="desc parrafos" style="text-align:left">Description</p>
 					<div class="texto-descripcion"></div>
 				</div>
@@ -101,11 +101,7 @@
 		
 	</main>
 	<div class="etiquetas-profile">
-				<ul>
-					<li class="filter active" data-nombre='todos' ><a href="#">Salto base</a></li>
-					<li class="filter" data-nombre='kayak'><a href="#">Kayak</a></li>
-					<li class="filter" data-nombre='senderismo'><a href="#">Senderismo</a></li>
-					<li class="filter" data-nombre='escalar'><a href="#">Esacalar</a></li>
+				<ul id="userSport">
 				</ul>
 			</div>
 
@@ -122,12 +118,7 @@
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-	
-	
-	
-	
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>	
+    <script src="js/profile.js"></script>
 </body>
 </html>

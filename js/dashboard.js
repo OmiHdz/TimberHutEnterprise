@@ -1,6 +1,4 @@
-//var idUser = localStorage.getItem('id');
-idUser=1;
-
+var idUser = localStorage.getItem('id');
 loadUserSport();
 
 function loadUserSport(){
@@ -59,9 +57,10 @@ function displayPublication(dataPublication){
 		h4.innerText=publication.name;
 		p.innerText=publication.nameSport;
 		button.innerText="Ir a publicación";
-
+		let idPublication = publication.id;
+		console.log(publication.id)
 		button.onclick=function(){
-			localStorage.setItem('idPublication', publication.id);
+			localStorage.setItem('idPublication', idPublication);
 			window.location.href="./publication.html";
 		}
 
@@ -88,3 +87,4 @@ function displayPublication(dataPublication){
 	}
 
 }
+
