@@ -1,6 +1,7 @@
 var idUser = localStorage.getItem('id');
 let myMap;
 let firstMarkerIcon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+// hardcoded values
 let startPosition = { lat: 20.675377, lng: -103.340121 };
 
 const submitButton = document.getElementById("submitRoute");

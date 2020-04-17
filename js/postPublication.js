@@ -1,127 +1,126 @@
-var idUser = localStorage.getItem('id');
+//var idEvent =  localStorage.getItem('idEvent');
+var idEvent = 3;
+var divMap=document.createElement("div");
+
+function getEvents(){
+	var requestEvent = new XMLHttpRequest(); //creando objeto 
+	requestEvent.onreadystatechange = function(){
+		if (this.readyState ==4 && this.status ==200) {
+			var responseEvent = this.responseText;
+			displayEvent(JSON.parse(responseEvent));
+		}
+	}
+	requestEvent.open('GET','http://localhost:8080/v1/events/by?id='+idEvent,true);
+	requestEvent.send();
+
+}
+
+function displayEvent(dataEvent){
+
+	//let event =dataEvent;
+
+	var divContent=document.getElementById("content-event");
+	
+		
+		let sectionEvent=document.createElement("section");
+		let divPubCol=document.createElement("div");
+		let divPubCont=document.createElement("div");
+		let h2=document.createElement("h2");
+		let img=document.createElement("img");
+		let divPubDesc= document.createElement("div");
+		let divPubDescTag= document.createElement("div");
+		let a=document.createElement("a");
+		let p=document.createElement("p");
+
+		let divCalendar=document.createElement("div");
+
+		let divMapContainer=document.createElement("div");
+		let divMapContainerChild=document.createElement("div");
+		let divNull1=document.createElement("div");
+		let divNull2=document.createElement("div");
+
+		
+		h2.innerText=event.name;
+		img.src=event.photo;
+		a.innerText=event.link;
+		p.innerText=event.description;
+
+
+		sectionEvent.classList.add("publication-event");
+		divPubCol.classList.add("d-flex");
+		divPubCol.classList.add("justify-content-center");
+		divPubCont.classList.add("p-5");
+		img.id="publication__img";
+		h2.classList.add("publication__h2--title");
+		divPubDesc.classList.add("publication__description");
+		divPubDesc.id="publication__description";
+		divPubDescTag.classList.add("publication__description--tag");
+		divMapContainer.classList.add("d-flex");
+		divMapContainer.classList.add("p-5");
+		divMapContainerChild.classList.add("d-flex");
+		divMapContainerChild.classList.add("justify-content-between");
+		divMapContainerChild.id="publication__map";
+		divMap.id="googleMap";
+
+
+		divPubDescTag.appendChild(a);
+		divPubDesc.appendChild(divPubDescTag);
+		divPubDesc.appendChild(p);
+		divPubCont.appendChild(h2);
+		divPubCont.appendChild(img);
+		divPubCont.appendChild(divPubDesc);
+		divPubCol.appendChild(divPubCont);
+		divPubCol.appendChild(divCalendar);
+		sectionEvent.appendChild(divPubCol);
+		sectionEvent.appendChild(divMapContainer);
+		divContent.appendChild(sectionEvent);
+		divMapContainerChild.appendChild(divNull1);
+		divMapContainerChild.appendChild(divMap);
+		
+		divMapContainerChild.appendChild(divNull2);
+		divMapContainer.appendChild(divMapContainerChild);
+
+		console.log(event);
+		loadMapRoute();
+}
+
+function loadMapRoute(){
 let myMap;
 let firstMarkerIcon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-let startPosition = { lat: 20.675377, lng: -103.340121 };
-
-const submitButton = document.getElementById("submitRoute");
-
+// hardcoded values
+let position = [];
+	
+loadRoute();
 function initMap() {
-
-    var mapProp = {
+	    let startPosition = {"lat":position[0].lat, "lng":position[0].lng}; 
+	    var mapProp = {
         center: startPosition,
         disableDoubleClickZoom: true,
 		zoom: 12
 	};
-	myMap = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+	myMap = new google.maps.Map(divMap, mapProp);
     
     let markersArray = [];
     let myPolyline;
 	// chack if map was initialized
 	if (myMap) {
 		// add functions that places a marker on clicked point in map
-		myMap.addListener('dblclick', (e) => {
             // create, prepare, and push marker into array
-            let myMarker = placeMarker(e.latLng, myMap);
-            myMarker.setDraggable(true);
-            myMarker.addListener('click', () => {
-                // console.log("lat: " + myMarker.getPosition().lat() + ", lng: " +myMarker.getPosition().lng());
-                updateInfo(myMarker, markersArray);
-            });
-            myMarker.addListener('drag', () => {
-                deletePolyline(myPolyline);
-                myPolyline = drawPolyline(markersArray, myMap);
-                updateInfo(myMarker, markersArray);
-            });
-            if (markersArray.length === 0) {
-                myMarker.setIcon(firstMarkerIcon);
-                submitButton.disabled = true;
-            }
-            markersArray.push(myMarker);
-            updateInfo(myMarker, markersArray);
-            if(myPolyline) {
-                deletePolyline(myPolyline);
-            }
-            myPolyline = drawPolyline(markersArray, myMap);
-            submitButton.disabled = false;
-        });
+            for(let i in position)
+            {
+	            let myMarker = placeMarker(position[i], myMap);
+	            if (markersArray.length === 0) {
+	                myMarker.setIcon(firstMarkerIcon);
+	            }
+	            markersArray.push(myMarker);
+	            updateInfo(myMarker, markersArray);
+	            if(myPolyline) {
+	                deletePolyline(myPolyline);
+	            }
+	            myPolyline = drawPolyline(markersArray, myMap);
+			}
     }
 
-    document.getElementById("btn-borrar-marcador").onclick = (e) => {
-        for (let i in markersArray) {
-            if (markersArray[i].getAnimation() !== null) {
-                if (i === 0 && markersArray[1] !== undefined) {
-                    markersArray[1].setIcon(firstMarkerIcon);
-                }
-                markersArray[i].setMap(null);
-                markersArray.splice(i, 1);
-                break;
-            }
-        }
-        if(myPolyline) {
-            deletePolyline(myPolyline);
-        }
-        myPolyline = drawPolyline(markersArray, myMap);
-        e.target.disabled = true;
-        if (markersArray.length === 0) {
-            submitButton.disabled = true;
-        }
-    };
-
-    submitButton.onclick = (e) => {
-        let coordinate = [];
-        let tituloPublication = document.getElementById("tituloPublication");
-		let select = document.getElementById("idSport");
-		let textPublication = document.getElementById("textPublication");
-        for (let i in markersArray) {
-            coordinate.push({
-
-                    'lat': markersArray[i].getPosition().lat(), 
-                    'lng': markersArray[i].getPosition().lng()
-            });
-        }
-
-	let data = {
-        'idUser': idUser,
-        'idSport': select.value,
-        'name':tituloPublication.value,
-        'text': textPublication.value,
-        'route': [{coordinate}]
-    };
-        // TODO: send data
-        console.log(data);
-        var fileInput = document.getElementById("img_profile");
-        var imgSource = "";
-        console.log(fileInput.files[0].name);
-
-    var formdata = new FormData();
-    formdata.append("publication", JSON.stringify(data));
-    formdata.append("file", fileInput.files[0], fileInput.files[0].name);
-
-    var requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
-    };
-
-    fetch("http://localhost:8080/v1/publications", requestOptions)
-      .then(response => response.text())
-      .then(result => showDialog(JSON.parse(result).name))
-      .catch(error => console.log('error', error));
-
-    };
-
-}
-
-function showDialog(namePublication){
-	let modalText = document.getElementById("show-publication");
-	let btnOk = document.getElementById("btn-ok");
-	
-	btnOk.onclick = function(){
-		window.location.href="./dashboard.html";
-	}
-
-	modalText.innerText = "Tu publicación " + namePublication + " se ha creado con éxito";
-	$("#modal").modal();
 }
 
 function deletePolyline (poly) {
@@ -134,9 +133,7 @@ function placeMarker(latLng, map) {
 	return new google.maps.Marker({position: latLng, map: map});
 }
 
-function updateInfo(marker, markersArray) {                
-    //document.querySelector(".marker-info > div > .lat").innerHTML = marker.getPosition().lat().toString();
-    //document.querySelector(".marker-info > div > .lng").innerHTML = marker.getPosition().lng().toString();
+function updateInfo(marker, markersArray) {  
     for (let m of markersArray) {
         if (m === marker) {
             m.setAnimation(google.maps.Animation.BOUNCE);
@@ -145,12 +142,9 @@ function updateInfo(marker, markersArray) {
             m.setAnimation(null);
         }
     }
-    //document.querySelector(".marker-info > div > button").disabled = false;
-    document.getElementById("btn-borrar-marcador").disabled = false;
 }
 
-// function accepts array of coordinates or array of markers
-function drawPolyline(points = [], map) {
+ function drawPolyline(points = [], map) {
     if (points.length === 0) return;
 	let pathPoints;
 	if (points[0].getPosition) {
@@ -169,4 +163,25 @@ function drawPolyline(points = [], map) {
 
 	path.setMap(map);
 	return path;
+}
+
+	function loadRoute(){
+		//Objeto para hacer peticiones
+		var request = new XMLHttpRequest();
+		request.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200) {
+			var responseEvent = this.responseText;
+			processData(JSON.parse(responseEvent));
+			}	
+		}
+		request.open("GET", "http://localhost:8080/v1/events/by?id=" + idEvent,true)
+		request.send();
+	}
+	function processData(data){
+		let points = data.route[0].coordinate;
+	 	for(let i in points){
+	 		position.push({"lat":points[i].lat, "lng":points[i].lng});
+	 	}
+	 	initMap();
+	}
 }
