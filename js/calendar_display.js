@@ -3,7 +3,7 @@ function getEvents(){
 	var requestEvent = new XMLHttpRequest(); //creando objeto 
 	requestEvent.onreadystatechange = function(){
 		if (this.readyState ==4 && this.status ==200) {
-			var responseEvent = this.responseText;s
+			var responseEvent = this.responseText;
 			displayEvent(JSON.parse(responseEvent));
 		}
 	}
@@ -40,9 +40,6 @@ function displayEvent(dataEvent){
 		let a=document.createElement("a");
 		let p=document.createElement("p");
 		let button=document.createElement("button");
-
-
-
 		
 		h2.innerText=event.name;
 		img.src=event.photo;
@@ -55,7 +52,6 @@ function displayEvent(dataEvent){
 			localStorage.setItem('idEvent', idEvent);
 			window.location.href="./event.html";
 		}
-
 
 		sectionEvent.classList.add("publication-event");
 		divPubColNull1.classList.add("p");
@@ -76,11 +72,7 @@ function displayEvent(dataEvent){
 		h5.classList.add("mt-0");
 		button.classList.add("btn");
 		button.classList.add("btn-primary");
-		button.id="btnPrimary";
-
-
-
-	
+		button.id="btnPrimary";	
 
 		divPubDesc.appendChild(divPubDescTag);
 		
@@ -100,17 +92,6 @@ function displayEvent(dataEvent){
 		divMediaBody.appendChild(p);
 		divMediaBody.appendChild(a);
 		divMedia.appendChild(button);
-
-		
-		
-
-		
-		
-		
-		
-
-		console.log(event);
-	
 
 		}
 
