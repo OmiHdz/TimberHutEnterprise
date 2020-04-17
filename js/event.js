@@ -1,9 +1,5 @@
-var idEvent =  localStorage.getItem('idEvent');
-<<<<<<< HEAD
-
-=======
-idEvent=7;
->>>>>>> faed5359f7088f8a5fa3f4050fdf70584cdfc73d
+//var idEvent =  localStorage.getItem('idEvent');
+idEvent=1;
 var divMap=document.createElement("div");
 
 function getEvents(){
@@ -35,6 +31,10 @@ function displayEvent(dataEvent){
 		let divPubDescTag= document.createElement("div");
 		let a=document.createElement("a");
 		let p=document.createElement("p");
+		let h4=document.createElement("h4");
+		let pAuthor=document.createElement("p");
+		let pTime=document.createElement("p");
+		let pDate=document.createElement("p");	
 
 		let divCalendar=document.createElement("div");
 
@@ -49,6 +49,11 @@ function displayEvent(dataEvent){
 		a.innerText=event.link;
 		a.setAttribute('href',event.link);
 		p.innerText=event.description;
+		pAuthor.innerText="Organizado por: " + event.nameAuthor;
+		h4.innerText=event.nameSport;
+		pTime.innerText="Hora: "+event.eventTime;
+		pDate.innerText="Fecha: "+event.eventDate;
+
 
 		divSpace.classList.add("p-4");
 		sectionEvent.classList.add("publication-event");
@@ -69,9 +74,13 @@ function displayEvent(dataEvent){
 		divMap.id="googleMap";
 
 		sectionEvent.appendChild(divSpace);
-		divPubDescTag.appendChild(a);
-		divPubDesc.appendChild(divPubDescTag);
+		divPubDesc.appendChild(h4);
+		divPubDesc.appendChild(pTime);
+		divPubDesc.appendChild(pDate);		
 		divPubDesc.appendChild(p);
+		divPubDesc.appendChild(divPubDescTag);
+		divPubDescTag.appendChild(a);
+		divPubDesc.appendChild(pAuthor);
 		divPubCont.appendChild(h2);
 		divPubCont.appendChild(img);
 		divPubCont.appendChild(divPubDesc);

@@ -71,7 +71,8 @@ function displayEvent(dataEvent){
 		divPubDescTag.classList.add("publication__description--tag");
 		divMedia.classList.add("media");
 		divMediaBody.classList.add("media-body");
-		divMedia.id="mediaCalendar"
+		divMedia.id="mediaCalendar";
+		p.classList.add("contenido-letra");
 		h5.classList.add("mt-0");
 		button.classList.add("btn");
 		button.classList.add("btn-primary");
