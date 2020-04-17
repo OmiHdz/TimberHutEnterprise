@@ -8,10 +8,13 @@
 	--espacios:5px;
 	--espacio-cont:5px;
 	--espacio-img:20px;
-	--letter-title:'open sans';
-	--letter-link:'open sans';
-	--letter-subtitle:'open sans';
-	--letter-content:'open sans';
+	--letter-title:'Lora', serif;
+	--letter-link:'Rokkitt', serif;
+	--letter-portada: 'Sorts Mill Goudy', serif; ;
+	--letter-subtitle:'Lora', serif;
+	--letter-content:'Karla', sans-serif;
+	--letter-content2: 'Roboto Slab', serif;
+	--letter-content3: 'Noto Sans JP', sans-serif; 
 	--shadow: 0 0 6px 0 rgba(0,0,0,5);
 }
 
@@ -196,8 +199,7 @@ ion-icon{
 	display: flex;
 	flex-direction: column;
 }
-.media-body{
-	box-shadow: var(--shadow);
+.media-body{	
 	padding:15px;
 	margin-bottom: 20px;
 }
@@ -327,12 +329,12 @@ nav .enlaces a{
 	display: inline-block;
 	padding: 5px 0;
 	margin-right: 10px;
-	font-size: 15px;
+	font-size: 17px;
 	font-weight: 300;
 	text-decoration: none;
 	border-bottom: 3px solid transparent;
 	color: inherit;
-	font-family: (--letter-link);
+	font-family: var(--letter-link);
 	font-weight: 500;
 }
 
@@ -374,6 +376,10 @@ nav .enlaces a:hover{
 	color: var(--colortl);
 	font-family: var(--letter-title);
 	text-align: center;
+}
+
+.text-portada{
+	font-family: var(--letter-portada);
 }
 
 .informacion{
@@ -657,9 +663,19 @@ th, td{
 
 .publication__h2--title{
 	text-align: center;
+	font-family: var(--letter-subtitle);
 }
+.parrafos{
+	font-family: var(--letter-content);
+	font-size: 22px;
+}
+.mt-0{
+	font-family: var(--letter-content2);
+}
+.contenido-letra{
+	font-family: var(--letter-content3);
 
-
+}
 .input-groupP .custom-file{
 	width: 35%;
 	margin-left:33%;

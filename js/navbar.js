@@ -1,4 +1,4 @@
-
+/*
 let nav = document.getElementById('nav');
 let menu = document.getElementById('enlaces');
 let open = document.getElementById('open');
@@ -68,3 +68,5 @@ window.addEventListener("resize", function(){
 open.addEventListener("click", function(){
 	opening();
 });
+
+*/

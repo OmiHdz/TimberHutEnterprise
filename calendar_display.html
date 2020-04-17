@@ -11,13 +11,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    <!--Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@472&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Sorts+Mill+Goudy:ital@1&display=swap" rel="stylesheet">
+
+
+
 
     
     <title>Calendar</title>
   </head>
   <body onload="getEvents()">
     
-    	<header class="head-dash">   
+    <header class="head-dash">   
 		<nav id="nav" class="nav2">
 			<div class="contenedor-nav">
 
@@ -31,31 +42,27 @@
 
 				<div class="enlaces" id="enlaces">
 					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
-					<a href="discover.html" id="enlace-descubre" class="btn-header">Descubre</a>					
-					
+					<a href="discover.html" id="enlace-descubre" class="btn-header">Descubre</a>
+
+					<a href="event.html" id="enlace-descubre" class="btn-header">Eventos</a>		
 					<div class="drop">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
         					<a class="dropdown-item" href="profile.html">Perfil</a>
-        					<a class="dropdown-item" href="publication.html">Publicación</a>
-        				</div>
-					</div>
-					<div class="drop">
-						<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="event.html">Evento</a>
-        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
+        					
         				</div>
 					</div>
 
-				
+
+					
+					</div>				
 				</div>
 			</div>
 		</nav>
 
 		<div class="text-dash">
-			<p>Encuentra tus </p>
-			<p>eventos</p>
+			<p class="text-portada">Encuentra tus </p>
+			<p class="text-portada">eventos</p>
 		</div>
 	</header>
 
@@ -64,39 +71,37 @@
 			<div class="p"></div>
 			<div class="p-5" id="publication__content">
 				
-				<h2 class="publication__h2--title">Eventos del mes</h2>
+				<h2 class="publication__h2--title">Eventos del mes</h2> <br>
 				
 				<div class="publication__description" id="publication__description">
-					<p>En esta sección podrás enterarte y explorar los eventos que se celebran este mes.</p>
+					<p class="parrafos">En esta sección podrás enterarte y explorar los eventos que se celebran este mes</p> <br>
 
 
 
 					
-					<div class="media">
+					<div class="media" >
 
-					 <div>
+					 <div class="img-content" id="img-content">
 					 	<img src="https://images.pexels.com/photos/1497587/pexels-photo-1497587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="mr-3" alt="..." id="displayEvent__img">
 					 </div>
 					  
 					  <div class="media-body">
 					    <h5 class="mt-0">Sesión de Kayaking en Samao</h5>
-					    Este evento esta enfocado para toda la familia, podras aventurarte a realizar Kayaking en el lago de Samao, ingresa al link para mayores informes!
+					    <p class="contenido-letra">Este evento esta enfocado para toda la familia, podras aventurarte a realizar Kayaking en el lago de Samao, ingresa al link para mayores informes!</p>
 					  </div>
-					  <div>holi perro</div>
 					</div>
 					
+					<br><br>
 
+					<div class="media">
 
-					<div class="media" style="display: flex;
-					 flex-direction: column;">
-
-					 <div>
+					 <div class="img-content" id="img-content">
 					 	<img src="https://images.pexels.com/photos/3642537/pexels-photo-3642537.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="mr-3" alt="evento" id="displayEvent__img">
 					 </div>
 					  
-					  <div class="media-body" style="box-shadow: var(--shadow);padding:15px;">
+					  <div class="media-body" >
 					    <h5 class="mt-0">Ruta de ciclismo en primavera</h5>
-					    Este evento esta enfocado para adolescentes y adultos, recorreremos la famosa ruta del tepalo, los mejores 10km de tu vida!
+					   <p class="contenido-letra"> Este evento esta enfocado para adolescentes y adultos, recorreremos la famosa ruta del tepalo, los mejores 10km de tu vida!</p>
 					  </div>
 					</div>
 
