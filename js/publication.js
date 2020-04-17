@@ -1,5 +1,4 @@
-//var idPublication =  localStorage.getItem('idPublication');
-idPublication=1;
+var idPublication =  localStorage.getItem('idPublication');
 var divMap=document.createElement("div");
 
 function getPublication(){

@@ -1,5 +1,4 @@
-//var idEvent =  localStorage.getItem('idEvent');
-idEvent=1;
+var idEvent =  localStorage.getItem('idEvent');
 var divMap=document.createElement("div");
 
 function getEvents(){

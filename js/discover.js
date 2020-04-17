@@ -6,8 +6,6 @@ function getPublication(){
 	requestPublication.onreadystatechange = function(){
 		if (this.readyState ==4 && this.status ==200) {
 			var responsePublication = this.responseText;
-			
-			//console.log(JSON.parse(responsePublication));
 			displayPublication(JSON.parse(responsePublication));
 		}
 	}
@@ -35,9 +33,6 @@ function displayPublication(dataPublication){
 		let h2=document.createElement("h2");
 		let a=document.createElement("a");
 
-
-		
-		
 		h2.innerText=publication.name;
 		img.src=publication.photo;
 		img.id="publication__img";
