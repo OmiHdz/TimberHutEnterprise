@@ -456,7 +456,7 @@ nav .enlaces a:hover{
 .post .content-post{
 	width: 75%;
 	box-shadow: var(--shadow);
-	height: 500px;
+	height: 600px;
 	overflow: hidden;
 	margin-bottom: var(--espacio-img);
 
@@ -464,7 +464,7 @@ nav .enlaces a:hover{
 }
 
 .img-content{
-	height: 85%;
+	height: 70%;
 	width: 100%;
 }
 .img-content img{

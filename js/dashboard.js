@@ -1,4 +1,5 @@
-var idUser = localStorage.getItem('id');
+//var idUser = localStorage.getItem('id');
+idUser=1;
 
 loadUserSport();
 
@@ -53,6 +54,7 @@ function displayPublication(dataPublication){
 		let p=document.createElement("p");
 		let button=document.createElement("button");
 
+
 		img.src=publication.photo;
 		h4.innerText=publication.name;
 		p.innerText=publication.nameSport;
@@ -73,15 +75,15 @@ function displayPublication(dataPublication){
 		p.classList.add("desc");
 		p.classList.add("contenido-letra");
 		divTextPost.classList.add("text-post");
-		publication.nameSport=publication.nameSport.replace(/ /g,"");
-		divContentPost.classList.add(publication.nameSport);
+		//publication.nameSport=publication.nameSport.replace(/ /g,"");
+		//divContentPost.classList.add(publication.nameSport);
 
 		divContentImg.appendChild(img);
 		divContentPost.appendChild(divContentImg);
 		divTextPost.appendChild(h4);
 		divTextPost.appendChild(p);
 		divContentPost.appendChild(divTextPost);
-		divContentPost.appendChild(button);
+		divTextPost.appendChild(button);
 		divMain.appendChild(divContentPost);
 	}
 
