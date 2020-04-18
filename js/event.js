@@ -9,7 +9,7 @@ function getEvents(){
 			displayEvent(JSON.parse(responseEvent));
 		}
 	}
-	requestEvent.open('GET','http://localhost:8080/v1/events/by?id='+idEvent,true);
+	requestEvent.open('GET','https://timberhut-api.herokuapp.com/v1/events/by?id='+idEvent,true);
 	requestEvent.send();
 
 }

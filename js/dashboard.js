@@ -9,7 +9,7 @@ function loadUserSport(){
 		saveLocalStorage(JSON.parse(response));
 		}	
 	}
-	request.open("GET", "http://localhost:8080/v1/users/"+idUser+"/sports",true);
+	request.open("GET", "https://timberhut-api.herokuapp.com/v1/users/"+idUser+"/sports",true);
 	request.send();
 }
 
@@ -30,7 +30,7 @@ function getPublication(idSport){
 				displayPublication(JSON.parse(responsePublication));
 		}
 	}
-	requestPublication.open('GET','http://localhost:8080/v1/publications/sport?idSport=' + idSport,true);
+	requestPublication.open('GET','https://timberhut-api.herokuapp.com/v1/publications/sport?idSport=' + idSport,true);
 	requestPublication.send();
 }
 

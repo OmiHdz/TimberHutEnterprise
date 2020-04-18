@@ -9,7 +9,7 @@ function getProfile(){
 			displayProfile(JSON.parse(responseProfile));
 		}
 	}
-	requestProfile.open('GET','http://localhost:8080/v1/users/'+ idUser,true);
+	requestProfile.open('GET','https://timberhut-api.herokuapp.com/v1/users/'+ idUser,true);
 	requestProfile.send();
 
 }

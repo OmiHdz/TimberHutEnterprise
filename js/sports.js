@@ -7,7 +7,7 @@ function getSports(){
 			displaySport(JSON.parse(responseSport));
 		}
 	}
-	requestSport.open('GET','http://localhost:8080/v1/sports',true);
+	requestSport.open('GET','https://timberhut-api.herokuapp.com',true);
 	requestSport.send();
 }
 

@@ -8,7 +8,7 @@ function getPublication(){
 			displayPublication(JSON.parse(responsePublication));
 		}
 	}
-	requestPublication.open('GET','http://localhost:8080/v1/publications',true);
+	requestPublication.open('GET','https://timberhut-api.herokuapp.com/v1/publications',true);
 	requestPublication.send();
 }
 

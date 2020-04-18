@@ -103,7 +103,7 @@ function initMap() {
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/v1/publications", requestOptions)
+    fetch("https://timberhut-api.herokuapp.com/v1/publications", requestOptions)
       .then(response => response.text())
       .then(result => showDialog(JSON.parse(result).name))
       .catch(error => console.log('error', error));

@@ -24,7 +24,7 @@ function sendDataUser(e){
 			email: email.value,
 			password: password.value,
 		}
-	request.open('POST',"http://localhost:8080/v1/users" ,true);
+	request.open('POST',"https://timberhut-api.herokuapp.com/v1/users" ,true);
 	request.setRequestHeader("Content-Type","application/json");
 	request.send(JSON.stringify(data));
 }

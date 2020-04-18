@@ -17,7 +17,7 @@ function sendDataUser(){
   		redirect: 'follow'
 	};
 
-	fetch("http://localhost:8080/v1/users/" + idUser, requestOptions)
+	fetch("https://timberhut-api.herokuapp.com/v1/users/" + idUser, requestOptions)
 	  .then(response => response.text())
 	  .then(result => saveData(JSON.parse(result)))	
 	  .catch(error => console.log('error', error));
@@ -34,7 +34,7 @@ function sendDataUserSport(idSport){
 		if(this.readyState == 4 && this.status == 201){
 		}
 	}
-	request.open("POST","http://localhost:8080/v1/userSport" ,true);
+	request.open("POST","https://timberhut-api.herokuapp.com" ,true);
 	request.setRequestHeader("Content-Type","application/json");
 	var data = {
 		idUser: idUser,
