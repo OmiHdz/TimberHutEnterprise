@@ -34,7 +34,7 @@ function sendDataUserSport(idSport){
 		if(this.readyState == 4 && this.status == 201){
 		}
 	}
-	request.open("POST","https://timberhut-api.herokuapp.com" ,true);
+	request.open("POST","https://timberhut-api.herokuapp.com/v1/userSport" ,true);
 	request.setRequestHeader("Content-Type","application/json");
 	var data = {
 		idUser: idUser,
