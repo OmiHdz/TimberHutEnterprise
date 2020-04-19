@@ -51,6 +51,7 @@ function displayPublication(dataPublication){
 		divPubCol.classList.add("d-flex");
 		divPubCol.classList.add("justify-content-center");
 		divPubCont.classList.add("p-5");
+		divPubCont.classList.add("text-center");
 		divPubCont.id="publication__content";
 		img.id="publication__img";
 		h2.classList.add("publication__h2--title");
