@@ -22,13 +22,16 @@ function displayProfile(dataUser){
 	let email = document.getElementById("email");
 	let imagen = document.getElementById("img_profile");
 	let userSport = document.getElementById("userSport");
+	let description = document.getElementById("editar-description");
 
 	userName.innerText = dataUser.userName;
 	nameU.innerText = dataUser.name;
 	lastName.innerText = dataUser.lastName;
 	email.innerText = dataUser.email;
 	imagen.src = dataUser.profilePic;
+	description.innerText = dataUser.description;
 
+	
 	for(sport of dataUser.sport){
 		
 		let listSport = document.createElement("li");
