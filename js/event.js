@@ -188,7 +188,7 @@ function updateInfo(marker, markersArray) {
 			processData(JSON.parse(responseEvent));
 			}	
 		}
-		request.open("GET", "http://localhost:8080/v1/events/by?id=" + idEvent,true)
+		request.open("GET", "https://timberhut-api.herokuapp.com/v1/events/by?id=" + idEvent,true)
 		request.send();
 	}
 	function processData(data){

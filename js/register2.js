@@ -2,13 +2,14 @@ var idUser = localStorage.getItem('id');
 let img = document.getElementById("publication__img");
 var formSport = document.getElementById("form");
 var nameUser = document.getElementById("exampleModalLabel");
+var description = document.getElementById("descriptionUser");
 formSport.onsubmit = sendUserSport;
 
 function sendDataUser(){
 	let fileInput = document.getElementById("img_profile");
 	let imgSource = "";
 	var formdata = new FormData();
-	formdata.append("description", "nada falta campo");
+	formdata.append("description", description.value);
 	formdata.append("file", fileInput.files[0], fileInput.files[0].name);
 
 	var requestOptions = {

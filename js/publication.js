@@ -63,6 +63,8 @@ function displayPublication(dataPublication){
 		divMapContainerChild.classList.add("justify-content-between");
 		divMapContainerChild.id="publication__map";
 		divMap.id="googleMap";
+		p.classList.add("pPublication");
+		pAuthor.classList.add("p-5");
 
 
 		sectionEvent.appendChild(divSpace);
@@ -177,7 +179,7 @@ function updateInfo(marker, markersArray) {
 			processData(JSON.parse(responseEvent));
 			}	
 		}
-		request.open("GET", "http://localhost:8080/v1/publications/by?id=" + idPublication,true)
+		request.open("GET", "https://timberhut-api.herokuapp.com/v1/publications/by?id=" + idPublication,true)
 		request.send();
 	}
 	function processData(data){

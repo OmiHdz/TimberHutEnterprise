@@ -196,6 +196,10 @@ ion-icon{
  }
 /* aquí van los estilos especificos del publication/event Register */
 
+.pPublication{
+	height: 100px;
+}
+
 #mediaCalendar{
 	    align-items: center;
     display: flex;
@@ -456,7 +460,7 @@ nav .enlaces a:hover{
 .post .content-post{
 	width: 75%;
 	box-shadow: var(--shadow);
-	height: 600px;
+	height: 820px;
 	overflow: hidden;
 	margin-bottom: var(--espacio-img);
 
