@@ -838,8 +838,20 @@ div #check{
 	
 	
 }
+.register{
 
-.login-cont{
+	width: 30%;
+	height: 40%;	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10%;	
+}
+
+.cont-login{
 	width: 98%;
 	box-shadow: var(--shadow);
 	height:inherit;
@@ -848,3 +860,187 @@ div #check{
 	background: #C7C7C7;
 	opacity:0.7;
 }
+
+
+
+/* Register1   */
+
+
+.body-register{ 	
+ 	
+ 	position: relative;
+
+}
+.body-register::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 118%;
+	background-image: url("../img/Camping3.jpg");
+	background-color: #cccccc;
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+	opacity: 0.7;
+
+}
+
+.register{
+
+	width: 30%;
+	height: 40%;	
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 8%;	
+	
+}
+
+.login-register{
+	width: 98%;
+	box-shadow: var(--shadow);
+	height:inherit;
+	overflow: hidden;
+	border-radius: 7px;
+	background: #C7C7C7;
+	opacity:0.8;
+}
+
+
+
+
+
+/* Carousel  */
+
+.cont-slide{
+	padding: 0;
+	margin: 0;
+}
+
+.cont-carousel{
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: space-around;
+	justify-content: center;
+
+}
+
+.tamaño-img{
+	margin-top: 47.5px;
+	width: 100%;
+	height: 440px;
+	align-content: center;
+	box-shadow: var(--shadow);
+	object-fit: cover;
+	
+}
+
+.imagen{
+	width: inherit;
+	height: inherit;
+	object-fit: fill;
+	
+}
+
+.carousel-caption {
+	background-color: rgba(125, 125, 125, .5);
+	width: 405px; 
+	height: 20%;
+	left: 10px;
+	top: 7px;
+	padding: 30px, 45px;
+	text-align: center;	
+	border-radius: 10px;
+
+}
+.carousel-caption h5{
+	font-size: 18px;
+	line-height: 25px;
+	width: inherit;
+	margin: 0;
+	padding: 0 5px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+}
+
+.cont-texto{
+	width: 100%;
+	height: 200px;
+	padding: 0;
+	margin: 0;
+	margin-top: 4%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	justify-content: center;
+}
+
+.text-land{
+	width: 45%;
+	color: #102505; 
+	font-family: var(--letter-link);
+	text-align: center;	
+}
+.text-landing{
+	font-size: 35px;
+}
+
+.boton-land{
+	margin-top: 3%;
+	margin-bottom: 2%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	justify-content: center;
+}
+
+.div-icons{
+	margin-bottom:  2%;
+}
+
+
+.landing img{
+	width: 55px;
+	height: 55px;
+	border-radius:150px;
+  	border:1px solid black;
+  	margin-bottom: 6px;
+  	margin-top: 5px;
+  	margin-left: 40px;
+}
+
+
+.head-profile{
+	width: 100%;
+}
+
+.contenedor-nav-landing{
+	margin: 0px;
+	padding: 0px;
+	display: flex;	
+	width: inherit;	
+	align-items: center;	
+	height: inherit;
+	position: absolute;
+   
+}
+
+nav .titulo-landing{
+	margin-right: -5%;
+	display: inline-block;
+	
+}
+nav .en-land{
+	display: inline-block;
+	width: 42%;
+	margin-right: -23%;
+}
+
+
