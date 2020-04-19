@@ -74,8 +74,8 @@ function displayPublication(dataPublication){
 		p.classList.add("desc");
 		p.classList.add("contenido-letra");
 		divTextPost.classList.add("text-post");
-		//publication.nameSport=publication.nameSport.replace(/ /g,"");
-		//divContentPost.classList.add(publication.nameSport);
+		publication.nameSport=publication.nameSport.replace(/ /g,"");
+		divContentPost.classList.add(publication.nameSport);
 
 		divContentImg.appendChild(img);
 		divContentPost.appendChild(divContentImg);
@@ -88,3 +88,15 @@ function displayPublication(dataPublication){
 
 }
 
+$(function () {
+    $(".filter").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        let valor =  $(this).attr("data-nombre");
+        if(valor == "todos"){
+        	$(".content-post").show("1000");	
+        }else{
+        	$(".content-post").not("."+ valor).hide("1000");
+        	$(".content-post").filter("."+ valor).show("1000");
+        }        
+    });
+});
