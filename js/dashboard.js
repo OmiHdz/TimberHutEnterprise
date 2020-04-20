@@ -5,8 +5,10 @@ function loadUserSport(){
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200) {
-		var response = this.responseText;
-		saveLocalStorage(JSON.parse(response));
+			var response = this.responseText;
+			if(response!=0){
+				saveLocalStorage(JSON.parse(response));
+			}
 		}	
 	}
 	request.open("GET", "https://timberhut-api.herokuapp.com/v1/users/"+idUser+"/sports",true);
