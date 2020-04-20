@@ -60,7 +60,7 @@ function displayEvent(dataEvent){
 		divPubCol.classList.add("justify-content-center");
 		divPubCont.classList.add("p-5");
 		divPubCont.id="publication__content";
-		img.id="publication__img";
+		img.id="publication_img";
 		h2.classList.add("publication__h2--title");
 		divPubDesc.classList.add("publication__description");
 		divPubDesc.id="publication__description";
@@ -71,6 +71,8 @@ function displayEvent(dataEvent){
 		divMapContainerChild.classList.add("justify-content-between");
 		divMapContainerChild.id="publication__map";
 		divMap.id="googleMap";
+		p.id="pCalendar";
+
 
 		sectionEvent.appendChild(divSpace);
 		divPubDesc.appendChild(h4);

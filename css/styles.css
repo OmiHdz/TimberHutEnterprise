@@ -203,6 +203,7 @@ ion-icon{
 #mediaCalendar{
 	    align-items: center;
     display: flex;
+    box-shadow: var(--shadow);
 }
 .media{
 	display: flex;
@@ -252,6 +253,9 @@ ion-icon{
 	flex-direction: column;
 	color: var(--colortl);
 	
+}
+#publication__content{
+	text-align: center;
 }
 #displayEvent__img{
 	width: 300px;
@@ -459,14 +463,31 @@ nav .enlaces a:hover{
 .post .content-post{
 	width: 75%;
 	box-shadow: var(--shadow);
-	height: 820px;
+	/*height: 820px;*/
+	height: auto;
 	overflow: hidden;
 	margin-bottom: var(--espacio-img);
 	border-radius: 7px;
 }
 
+#publication__img{
+	width: 100%;
+}
+#publication_img{
+	width: 60%;
+	height: 50%;
+	object-fit: cover;	
+	padding: 0px;
+	border-radius: 7px;
+}
+
+#pCalendar{
+	height: auto;
+}
+
 .img-content{
-	height: 70%;
+	/*	height: 70%;*/
+	height: auto;
 	width: 100%;
 }
 .img-content img{

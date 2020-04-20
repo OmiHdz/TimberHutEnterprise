@@ -37,6 +37,7 @@ function displaySport(dataSports){
 		divImg.classList.add("img-content");
 		divText.classList.add("text-post");
 		p.classList.add("desc");
+		p.id="pCalendar";
 		divPba.classList.add("content-post");
 		sport.name=sport.name.replace(/ /g,"");
 		divPba.classList.add(sport.name);

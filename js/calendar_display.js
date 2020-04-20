@@ -44,6 +44,7 @@ function displayEvent(dataEvent){
 		h2.innerText=event.name;
 		img.src=event.photo;
 		a.innerText=event.link;
+		a.setAttribute('href',event.link);
 		p.innerText=event.description;
 		button.innerText="Ir a Evento";
 
@@ -73,6 +74,7 @@ function displayEvent(dataEvent){
 		button.classList.add("btn");
 		button.classList.add("btn-primary");
 		button.id="btnPrimary";	
+		p.id="pCalendar";
 
 		divPubDesc.appendChild(divPubDescTag);
 		
